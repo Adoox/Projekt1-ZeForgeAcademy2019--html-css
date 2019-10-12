@@ -1,0 +1,1485 @@
+
+/*ubacivanje foogle fontova koji ce se kasnije implementirati u css cod*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:700i|Montserrat:700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:700&display=swap');
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat",sans-serif;
+}
+
+html{
+	scroll-behavior: smooth;    /*smooth efekat scrollanja stranice pritiskom na odreni link*/
+}
+
+header{
+	display: flex;
+	right: 0px;
+	width: 110px;
+	height: 100%;
+	position: fixed;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2); 
+	/*background: rgb(195, 20, 52 , 0.6);*/
+	z-index: 1111;
+}
+
+body{
+	background-color: #252527;
+}
+
+
+.navbar{
+	margin-right: auto;
+	margin-left: auto;
+	width: 1100px;
+	height: 60px;
+}
+
+
+.lista li a{
+	text-decoration: none;
+	font-size: 15px;
+	color: white ;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	padding: 8px;
+
+}
+
+.lista{
+	list-style: none;
+	float: right;
+}
+
+.lista li{
+	display: inline-block;
+	padding: 20px 10px;
+}
+
+.lista li a{
+	transition: all 0.3s ease 0s;
+
+}
+
+.lista li a:hover{
+	font-size: 18px;
+	border-bottom:4px solid #9CD4E7;
+
+}
+
+.logoBox{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	float: right;
+	height: 60px;
+	width: 120px;
+}
+
+.logoBox img{
+	width: 120px;
+	height: 70px;
+	background: none;
+}
+
+.show-menu,.hide-menu{
+	transition: 0.4s;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;   /*na većim rezolucijima show i hide-menu se ne prikazuju*/
+
+}
+
+.show-menu{     
+	color: white;
+	float: right;
+	margin-right: 50px;
+}
+
+.show-menu i{
+	line-height: 50px;
+}
+
+#chk{
+	position: absolute;
+	visibility: hidden;
+	z-index: -1111;           /*checkbox koji se takoder kao i show i hide-menu ne prikazuje na vecim rezolucijima,
+	                          direktno je povezan sa show i hide-menu tako da pritiskom na jedan od njih checkbox daje
+	                          znak jesmo li kliknuli na jedan od njih ili ne*/
+}
+
+
+.content{
+	width: 100%;
+	height: 550px;
+	background-image: url("contentbg.jpg");
+	background-repeat: no-repeat;        /*slika se postavlja u orginalnoj rezoluciji*/
+	background-size: cover; 
+	background-position: center center;     
+}
+
+
+/*responsive control- svi dijelovi stranice dobivaju nove parametre koji se primjenjuju na određenoj
+šitini odnosno rezoluciji ekrana, u ovom slučaju čitav izgled stranice se prilagođava mobilnim uređajima te svi dijelovi 
+stranice dobivaju nove dimenzije, izgled, boju zavisno od naših želja*/
+
+@media screen and (max-width: 900px){
+
+	header{
+		width: 100%!important;
+		height: 60px!important;
+	}
+	.show-menu, .hide-menu{
+		display: block;
+	}
+
+	.lista{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background-image: url("https://images.pexels.com/photos/1449082/pexels-photo-1449082.jpeg?cs=srgb&dl=adentro-beber-bebida-1449082.jpg&fm=jpg");
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center center;
+		right: -100%;
+		top: 0;
+		text-align: center;
+		padding: 50px 0;
+		transition: 0.7s;
+	}
+
+	.lista li{
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+
+	}
+
+	.lista li a{
+		color: white!important;
+		background-color: #2222C2;
+	}
+
+	.logoBox{
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+	}
+
+	.hide-menu{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		color: white!important;
+	}
+
+	.show-menu{         /*menu koji se pojavljuje na mobilnim uredajima, na vecim rezolucijama on se ne prikazuje*/
+		position: absolute;
+		left: 20px;
+	}
+
+	#chk:checked ~ .lista{
+		right: 0;            /*kada je checkbox označen direktno se odnosi na show i hide-menu 
+		                       te se oni prikazuju ili ne prikazuju na ekranu u zavisnosti jesmo li kliknuli
+		                       na njih ili ne*/
+	}
+
+	.content-txt-Box{
+		margin-right: 0px!important;
+		width: 100%!important;
+		
+	}
+
+	.content-txt-Box h1{
+		text-align: center;
+		padding-top: 140px!important;
+		color: #C9DAFF!important;
+		
+	}
+
+	.content1{
+		width: 100%!important;
+		height: 100%!important;
+	}
+
+	.content1 h2{
+		text-align: center;
+	}
+
+	.content1 hr{
+		width: 100%!important;
+	}
+
+	.img-Boxes{
+		width: 100%!important;
+		display: block!important;
+	}
+
+	#img1-Box{
+		margin-left:auto!important;
+		margin-right: auto!important;
+		width: 90%!important;
+		margin-bottom: 10px!important;
+	}
+
+	#img2-Box{
+		margin-left:auto!important;
+		margin-right: auto!important;
+		width: 90%!important;
+		margin-bottom: 10px!important;
+
+	}
+
+	#img3-Box{
+		margin-left:auto!important;
+		margin-right: auto!important;
+		width: 90%!important;
+
+	}
+
+	.content2{
+	margin-top: 930px!important;
+	width: 100%!important;
+	height: 3000px!important;
+    }
+
+
+
+    .content2 p{
+    	width: 90%!important;
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    }
+
+    .content2 hr{
+    	width: 100%!important;
+
+    	margin-top: 550px!important;
+    }
+
+    .row1{
+       display: block!important;
+       width: 100%!important;
+       margin-bottom: 550px!important;
+    }
+
+    #row1_img{
+    	width: 90%!important;
+    	margin-right: auto!important;
+    	margin-left: auto!important;
+   
+    }
+
+    #row1_txt{
+        height: 500px!important;
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    	width: 90%!important;
+    }
+
+    #row1_txt p{
+    	text-align: center!important;
+    }
+
+    #row1_txt h3{
+    	text-align: center!important;
+    	padding-left: 0px!important;
+    }
+
+
+    .row2{
+       display: block!important;
+       width: 100%!important;
+       margin-bottom: 550px!important;
+    }
+
+    #row2_img{
+    	width: 90%!important;
+    	margin-right: auto!important;
+    	margin-left: auto!important;
+   
+    }
+
+    #row2_txt{
+        height: 500px!important;
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    	width: 90%!important;
+    }
+
+    #row2_txt p{
+    	text-align: center!important;
+    }
+
+    #row2_txt h3{
+    	text-align: center!important;
+    	padding-left: 0px!important;
+    }
+
+    .row3{
+       display: block!important;
+       width: 100%!important;
+
+    }
+
+    #row3_img{
+    	width: 90%!important;
+    	margin-right: auto!important;
+    	margin-left: auto!important;
+   
+    }
+
+    #row3_txt{
+        height: 500px!important;
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    	width: 90%!important;
+    }
+
+    #row3_txt p{
+    	text-align: center!important;
+    }
+
+    #row3_txt h3{
+    	text-align: center!important;
+    	padding-left: 0px!important;
+    }
+
+    #readmore-box{
+      margin-right: 0px!important;
+      float: none!important;
+      margin-right: auto!important;
+      margin-left: auto!important;
+    }
+
+
+    .content3{
+    	margin-top: 50px!important;
+    	width: 100%!important;
+    	height: 2900px!important;
+    	display: block!important;
+    }
+
+    .content3_lijevo{
+    	width: 100%!important;
+    }
+
+    #member_box1{
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    }
+
+    #member_box2{
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    }
+
+    #member_box3{
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    }
+
+    .content3_desno{
+    	width: 100%!important;
+    	display: block!important;
+    }
+
+    .information_boxes{
+    	width: 100%!important;
+    	display: block!important;
+    	margin-left: 0px!important;
+    }
+
+    .informationBox1,
+    .informationBox2,
+    .informationBox3{
+    	margin-right: auto!important;
+    	margin-left: auto!important;
+    }
+
+    .chart_box{
+    	width: 90%!important;
+    	margin-top: 650px!important;
+    }
+
+    .workplace_box{
+    	width: 90%!important;
+    }
+
+    .content4{
+    	width: 100%!important;
+    	height: 1100px!important;
+    	display: block!important;
+    }
+
+    .mapa_i_login{
+    	display: block!important;
+    	width: 100%!important;
+    }
+
+    #icon_box{
+    	margin-top: -25px!important;
+    }
+
+    .mapa{
+    	width: 100%!important;
+    	margin-bottom: 50px!important;
+    }
+
+    .mapa iframe{
+    	width: 100%!important;
+    }
+
+    .login{
+    	width: 90%!important;
+    	margin-left: auto!important;
+    	margin-right: auto!important;
+    }
+
+    .footer1{
+    	width: 100%!important;
+    	height: 1000px!important;
+    	display: block!important;
+    }
+
+    .Contactt{
+    	border-left: none!important;
+    	border-right: none!important;
+    }
+
+    .Info{
+    	border-left: none!important;
+    	border-right: none!important;
+    }
+
+    .Rukovodstvo{
+    	border-left: none!important;
+    	border-right: none!important;
+    	margin-left: 0px!important;
+    }
+
+    .Sponzori{
+    	border-left: none!important;
+    	border-right: none!important;
+    	margin-left: 0px!important;
+    }
+
+/*u "resposnive-control" dijelu mozemo naknadno mijenjati sve parametre onako kako nama odgovara*/
+
+
+
+
+
+}
+
+
+.content-txt-Box{
+	float: right;
+	width: 550px;
+	margin-right: 200px;
+	height: 400px;
+}
+
+.content-txt-Box h1{
+	font-family: "Montserrat Alternates",sans-serif;
+	display: flex;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	color: white;
+	justify-content: center;
+}
+
+.content-txt-Box p{
+	font-family: "Montserrat Alternates",sans-serif;
+	display: flex;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	padding-bottom: 40px;
+}
+
+#joinUs-box{
+	display: flex;
+	margin-right: auto;
+	margin-left: auto;
+    width: 100px;
+    height: 40px;
+    background-color:orange;
+    border-radius: 30px;
+}
+
+#joinUs-box:hover{
+	background-color: #D68910;
+}
+
+#joinUs-box a{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.main{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 500px;
+}
+
+.content1{
+	width: 1100px;
+	height: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.content1 h1{
+	font-family: "Montserrat Alternates",sans-serif;
+	padding-top: 50px;
+	padding-bottom: 70px;
+	color: #2222C2;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.content1 i{
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #3786FF;
+}
+
+ .content1 hr{
+		margin-bottom: 50px;
+		
+}
+.img-Boxes{          /*glavni div sa 3 box(diva) koji u "responsive modu" umjesto flex postaje block*/
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*Prvi Box sa tekstom i logom unutar "diva img-Boxes"*/
+
+#img1-Box{
+	position: relative;
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 300px;
+	height: 400px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	background-color: none;
+	overflow: hidden;
+}
+
+#img1-Box p{
+	color: white;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.logo1-box{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border:1px solid white;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+
+.logo1-box i{
+	color: white;
+	font-size: 50px;
+	padding-top: 25px;
+
+}
+
+#frontend-p{
+	color: #1C5BF9!important;
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+
+#img1-Box .hover{
+	position: absolute;
+	width: 100%;
+	top: calc(98%);
+	height: 100%;
+	background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+	z-index: 1;
+	transition: 0.7s;
+}
+
+#img1-Box:hover .hover{
+	top: 0;
+	z-index: -1111;
+}
+
+#img1-Box:hover #frontend-p{
+	color: white!important;
+}
+
+/*....................................*/
+
+
+/*Drugi Box sa tekstom i logom unutar "diva img-Boxes"*/
+
+#img2-Box{
+	position: relative;
+	margin-right: 50px;
+	width: 300px;
+	height: 400px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	background-color: none;
+	overflow: hidden;
+}
+
+#img2-Box p{
+	color: white;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.logo2-box{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border:1px solid white;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+
+.logo2-box i{
+	color: white;
+	font-size: 50px;
+	padding-top: 25px;
+
+}
+
+#frontend-p{
+	color: #1C5BF9!important;
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+
+#img2-Box .hover{
+	position: absolute;
+	width: 100%;
+	top: calc(98%);
+	height: 100%;
+	background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+	z-index: 1;
+	transition: 0.7s;
+}
+
+#img2-Box:hover .hover{
+	top: 0;
+	z-index: -1111;
+}
+
+#img2-Box:hover #frontend-p{
+	color: white!important;
+}
+
+
+/*....................................*/
+
+
+
+/*Treci Box sa tekstom i logom unutar "diva img-Boxes"*/
+
+#img3-Box{
+	position: relative;
+	margin-right: 50px;
+	width: 300px;
+	height: 400px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	background-color: none;
+	overflow: hidden;
+}
+
+#img3-Box p{
+	color: white;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.logo3-box{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	border:1px solid white;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+
+.logo3-box i{
+	color: white;
+	font-size: 50px;
+	padding-top: 25px;
+
+}
+
+#frontend-p{
+	color: #1C5BF9!important;
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+
+#img3-Box .hover{
+	position: absolute;
+	width: 100%;
+	top: calc(98%);
+	height: 100%;
+	background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+	z-index: 1;
+	transition: 0.7s;
+}
+
+#img3-Box:hover .hover{
+	top: 0;
+	z-index: -1111;
+}
+
+#img3-Box:hover #frontend-p{
+	color: white!important;
+}
+
+
+/*....................................*/
+
+
+#applayNow-box{
+	display: flex;
+	margin-right: auto;
+	margin-left: auto;
+    width: 150px;
+    height: 40px;
+    background-color:orange;
+    border-radius: 30px;
+}
+
+#applayNow-box:hover{
+	background-color: #D68910;
+}
+
+
+#applayNow-box a{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-left: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.content2{
+	margin-left: auto;
+	margin-right: auto;
+	height: 1450px;
+	width: 1100px;
+	color: #C67E00 ;
+}
+
+.content2 p{
+	font-size: 16px;
+	padding-top: 70px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+#content2-p{
+	font-family: "Montserrat Alternates",sans-serif;
+	color: white;
+}
+
+
+.row1{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	width: 1100px;
+	height: 320px;
+	background-color: #252527;
+	margin-bottom: 40px;
+	
+
+}
+
+#row1_img{
+	width: 550px;
+	height: 320px;
+	background-color: blue;
+}
+
+#row1_img img{
+	width: 100%;
+	height: 100%;
+}
+#row1_txt{
+  background-color: #4B4B4B;
+  width: 550px;
+  height: 320px;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,1);
+}
+
+#row1_txt p{
+    display: flex;
+	padding-left: 20px;
+	margin-top: -50px;
+	padding-right: 20px;
+	text-align: left;
+	color: white;
+}
+
+#row1_txt h3{
+	color: #3786FF;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 25px;
+
+}
+
+#readmore-box{
+	display: flex;
+	float: right;
+	margin-right: 20px;
+	margin-top: -30px;
+    width: 150px;
+    height: 40px;
+    background-color:orange;
+    border-radius: 30px;
+}
+
+#readmore-box:hover{
+	background-color: #D68910;
+}
+
+
+#readmore-box a{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-left: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.row2{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	width: 1100px;
+	height: 320px;
+	background-color: #252527;
+	margin-bottom: 40px;
+}
+
+#row2_img{
+	width: 550px;
+	height: 320px;
+	background-color: blue;
+}
+
+#row2_img img{
+	width: 100%;
+	height: 100%;
+}
+#row2_txt{
+  background-color: #4B4B4B;
+  width: 550px;
+  height: 320px;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,1);
+}
+
+#row2_txt p{
+    display: flex;
+    margin-top: -50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	color: white;
+}
+
+#row2_txt h3{
+	color: #3786FF;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 25px;
+}
+
+
+.row3{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	width: 1100px;
+	height: 320px;
+	background-color: #252527;
+	margin-bottom: 20px;
+
+}
+
+#row3_img{
+	width: 550px;
+	height: 320px;
+	background-color: blue;
+}
+
+#row3_img img{
+	width: 100%;
+	height: 100%;
+}
+#row3_txt{
+  background-color: #4B4B4B;
+  width: 550px;
+  height: 320px;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,1);
+}
+
+#row3_txt p{
+    display: flex;
+    margin-top: -50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	color: white;
+}
+
+#row3_txt h3{
+	color: #3786FF;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 25px;
+}
+
+.content2 hr{
+	margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.content2 h2{
+	text-align: center;
+	font-family: "Montserrat Alternates",sans-serif;
+	color: #2222C2;
+}
+
+.content3{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	height: 1100px;
+	width: 1100px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+#visitus_txt{
+	padding-top: 40px;
+	padding-bottom: 50px;
+	text-align: center;
+	color: #2222C2;
+	font-family: "Montserrat Alternates",sans-serif;
+}
+
+/*div smjesten na lijevoj strani unutar content3_diva koji sadrzi boxove sa imenima,informacijama i slkama
+clanova, prelaskom preko svakog boxa desava se 3d tranzcija sa prednje(.front) na zadnju (.back) stranu*/
+.content3_lijevo{
+	display: block;
+	width: 290px;
+	height: 1100px;
+	border-right: 2px solid white;
+   
+}
+
+.content3_lijevo h2{
+	text-align: center;
+	padding-top: 20px;
+	color: white;
+
+}
+
+#member_box1{  
+	width: 250px;
+	height: 300px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:30px;
+	background-color: grey;
+	transform-style: preserve-3d;
+	transition: all 2s ease;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+#member_box1:hover{   /*nacin na koji se divovi rotiraju sa prednje na zadnju stranu*/
+	transform: rotateY(180deg);
+}
+
+#member_box1:hover .back{
+	z-index: 1;
+}
+
+#member_box2:hover{
+	transform: rotateY(180deg);
+}
+
+#member_box2:hover .back{
+	z-index: 1;
+}
+
+#member_box3:hover{
+	transform: rotateY(180deg);
+}
+
+#member_box3:hover .back{
+	z-index: 1;
+}
+
+.front{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+
+}
+
+.back{
+	position: relative;
+	z-index: -1111;
+	bottom: 300px;
+	transform: rotateY(180deg);
+	width: 100%;
+	height: 100%;
+	color: white;
+	background-color: #6B6B6B;
+
+}
+
+#back_p1{
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+#back_p1 i{
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#back_p2{
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+}
+
+#back_p2 i{
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#back_p3{
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#back_p3 i{
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.back a i{
+	color: white;
+	font-size: 30px;
+	padding: 0 10px;
+	padding-left: 35px;
+	padding-top: 30px;
+}
+
+
+
+#half_card1{
+	width: 250px;
+	height: 150px;
+	background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+
+}
+
+#half_card2 h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: black;
+}
+
+#half_card2 p{
+	text-align: center;
+	color: #EC2525;
+}
+
+.member_img_box{
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	border-radius: 100px;
+	margin-top: -80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.member_img_box img{
+	border-radius: 100px;
+	width: 100%;
+	height: 100%;
+}
+
+
+#member_box2{
+	width: 250px;
+	height: 300px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:20px;
+	background-color: grey;
+	transform-style: preserve-3d;
+	transition: all 2s ease;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+#member_box3{
+	width: 250px;
+	height: 300px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top:20px;
+	background-color: grey;
+	transform-style: preserve-3d;
+	transition: all 2s ease;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+/*..................................................*/
+
+
+
+.content3_desno{
+	width: 810px;
+	height: 1100px;
+	display: block;
+   
+}
+
+.content3_desno h2{
+	text-align: center;
+	padding-top: 20px;
+	color: white;
+}
+
+.content3_desno h3{
+	text-align: center;
+	padding-bottom: 20px;
+	color: white;
+}
+
+/*divovi unutar desnog cijela content3 diva koji sadrze "boxove" sa informacijama*/
+.information_boxes{
+	display: flex;
+	width: 790px;
+	height: 320px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+
+}
+
+.informationBox1{
+	margin-left: 10px;
+	margin-top: 10px;
+	width: 250px;
+	height: 300px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+.informationBox1 h4{
+	width: 250px;
+	height: 30px;
+	background-color: #6B6B6B;
+	text-align: center;
+	color: white;
+	padding-top: 15px;
+}
+
+.informationBox1 p{
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.informationBox1 h1{
+	text-align: center;
+	color: #EC2525;
+	font-size: 80px;
+
+	
+}
+
+.informationBox2{
+	margin-left: 10px;
+	margin-top: 10px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	width: 250px;
+	height: 300px;
+}
+
+.informationBox2 h4{
+	width: 250px;
+	height: 30px;
+	background-color: #6B6B6B;;
+	text-align: center;
+	color: white;
+	padding-top: 15px;
+}
+
+.informationBox2 p{
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.informationBox2 h1{
+	text-align: center;
+	color: #EC2525;
+	font-size: 80px;
+
+	
+}
+
+.informationBox3{
+	margin-left: 10px;
+	margin-top: 10px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+	width: 250px;
+	height: 300px;
+	
+}
+
+.informationBox3 h4{
+	width: 250px;
+	height: 30px;
+	background-color: #6B6B6B;
+	text-align: center;
+	color: white;
+	padding-top: 15px;
+}
+
+.informationBox3 p{
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.informationBox3 h1{
+	text-align: center;
+	color: #EC2525;
+	font-size: 80px;
+
+	
+}
+/*...........................................*/
+
+.chart_box{
+	width: 600px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+.chart_box img{
+	width: 100%;
+	height: 100%;
+}
+
+.workplace_box{
+	width: 750px;
+	height: 300px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.workplace_box img{
+	width: 100%;
+	height: 100%;
+}
+
+.content4{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	height: 510px;
+	width: 1100px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+.mapa_i_login{
+	width: 100%;
+	height: 500px;
+	display: flex;
+}
+
+.mapa{
+	width: 700px;
+	height: 500px;
+}
+
+.login{
+	width: 400px;
+	height: 500px;
+	background-color: #C9DAFF;
+	text-align: center;
+}
+.login h2{
+	padding-bottom: 30px;
+}
+
+#icon_box{
+	margin-top: -25px;
+	margin-bottom: 50px;
+	width: 60px;
+	height: 60px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50px;
+	border:2px solid #1C5BF9;
+}
+
+#icon_box i{
+	font-size: 30px;
+	padding-top: 15px;
+}
+
+#chk_box2{
+	margin-right: 10px;
+}
+#email_box{
+   padding-top: 8px;
+   padding-bottom: 8px;
+   padding-left: 10px;
+   margin-bottom: 20px;
+   border-radius: 20px;
+   border:none;
+   width: 250px;
+}
+
+#psw_box{
+   padding-bottom: 8px;
+   padding-top: 8px;
+   padding-left: 10px;
+   margin-bottom: 20px;
+   border-radius: 20px;
+   border:none;
+   width: 250px;
+}
+
+#btn{
+	font-size: 15px;
+	margin-top: 20px;
+	width: 100px;
+	height: 40px;
+	border-radius: 30px;
+	border:none;
+	background-color: orange;
+}
+
+#btn:hover{
+	background-color: #D68910;
+}
+
+#btn a{
+	text-decoration: none;
+	color: white;
+}
+
+
+footer{
+	width: 100%;
+	height: 250px;
+}
+
+.footer1{
+	width: 1100px;
+	height: 250px;
+	box-shadow: .5rem .5rem 3rem rgba(0,0,0,1);
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+}
+
+.Contactt{
+	width: 250px;
+	height: 250px;
+	border-right: 1px solid #C9DAFF;
+	border-left: 1px solid #C9DAFF;
+
+}
+.Info{
+	border-right: 1px solid #C9DAFF;
+	padding-right: 10px;
+}
+
+.Sponzori{
+	margin-left: 30px;
+	border-right: 1px solid #C9DAFF;
+	padding-right: 30px;
+}
+
+.Sponzori a{
+	text-decoration: none;
+	color: white;
+}
+
+.Sponzori a p:hover{
+	color: #EC2525;
+}
+
+.Rukovodstvo{
+	margin-left: 30px;
+	border-right: 0.1px solid #C9DAFF;
+	padding-right: 5px;
+
+
+}
+.footer1 h3{
+	margin-left: 30px;
+	padding-top: 30px;
+	color: #C9DAFF;
+}
+
+.footer1 p{
+	color: white;
+	margin-left: 30px;
+}
